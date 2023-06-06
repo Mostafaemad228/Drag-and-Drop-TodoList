@@ -43,6 +43,28 @@ AddBTN.addEventListener("click", function () {
 
 
 
+// drage and drop function
+function dragTasks() {
+    document.querySelectorAll(".dragItem").forEach((task, i) => {
+
+
+
+
+
+
+
+
+    });
+
+
+
+
+}
+
+dragTasks()
+
+
+
 
 
 
