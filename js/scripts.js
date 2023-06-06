@@ -4,11 +4,9 @@ let todo_task = document.querySelector('[name="todo-title"]');
 let AddBTN = document.querySelector(".AddBTN");
 let dataContainer = document.querySelector(".Data-items_todos");
 let Boxs = document.querySelectorAll(".Box");
-// let DelBtn = ;
+
+
 let drag= null; 
-
-
-
 
 AddBTN.addEventListener("click", function () {
     
@@ -37,92 +35,10 @@ AddBTN.addEventListener("click", function () {
 
         });
 
-        dragTasks();
     }
-
-
  
 
 });
-
-
-
-
-// drage and drop function
-function dragTasks() {
-    document.querySelectorAll(".dragItem").forEach((task , i) => {
-
-
-
-        task.addEventListener("dragstart", function () {
-            // console.log("start");
-            drag = task
-        });
-
-
-        task.addEventListener("dragend", function () {
-            // console.log("end");
-            drag = null
-        });
-
-
-        Boxs.forEach(box => {
-            box.addEventListener("dragover", function (e) {
-                e.preventDefault();
-                if (this.dataset.columns == "in progress") {
-                    this.style.backgroundColor = '#8957E5';
-                }
-                else if (this.dataset.columns == "completed") {
-                    this.style.backgroundColor = '#238636';
-
-                    // setTimeout(() => {
-                    //     task.style.display = 'none';
-                    // }, 4000);
-                }
-               
-                
-                
-            });
-
-            box.addEventListener("dragleave", function () {
-                this.style.backgroundColor = '#010409';
-                this.style.color = '#E6EDF3';
-                
-               
-            });
-
-            box.addEventListener("drop", function () {
-                this.append(drag);
-                this.style.backgroundColor = '#010409';
-                this.style.color = '#E6EDF3';
-
-                // task.setAttribute('ondragstart', `hasbeenDraged(${i})`)
-                
-                // task.addEventListener("click", function () {
-
-                //     task.style.display = 'none';
-
-                //  })
-
-
-               
-            });
-            
-        });
-
-        
-
-
-    });
-
-
-
-
-}
-
-dragTasks()
-
-
 
 
 
