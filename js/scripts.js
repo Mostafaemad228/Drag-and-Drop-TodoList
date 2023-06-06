@@ -53,6 +53,10 @@ function dragTasks() {
         });
 
 
+        task.addEventListener("dragend", function () {
+            // console.log("end");
+            drag = null
+        });
 
 
 
