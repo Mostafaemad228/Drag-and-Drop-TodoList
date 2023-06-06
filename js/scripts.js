@@ -26,10 +26,9 @@ AddBTN.addEventListener("click", function () {
                 this.parentElement.parentElement.parentElement.style.display = "none"
              });
         });
+        dragTasks();
     }
 });
-
-
 
 
 // drage and drop function
