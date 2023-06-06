@@ -89,21 +89,9 @@ function dragTasks() {
                 this.style.backgroundColor = '#010409';
                 this.style.color = '#E6EDF3';
 
-                // task.setAttribute('ondragstart', `hasbeenDraged(${i})`)
-
-                // task.addEventListener("click", function () {
-
-                //     task.style.display = 'none';
-
-                //  })
-
-
-
             });
 
         });
-
-
 
     });
 
