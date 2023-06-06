@@ -1,3 +1,5 @@
+
+
 let todo_task = document.querySelector('[name="todo-title"]');
 let AddBTN = document.querySelector(".AddBTN");
 let dataContainer = document.querySelector(".Data-items_todos");
@@ -37,3 +39,33 @@ AddBTN.addEventListener("click", function () {
  
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
