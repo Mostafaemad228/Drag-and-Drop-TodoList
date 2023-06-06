@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Gotu&family=Lilita+One&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+
+/* background-image: linear-gradient(to right , #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1); */
+background-color:#0D1117;
+}
+
+.todo{
+    width: 100%;
+    height: auto;
+    position: relative;
+
+}
+.head h3,
+.head p{
+    color: #E6EDF3;
+}
+.form_container{
+    
+background: #010409;
+/* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 6px );
+-webkit-backdrop-filter: blur( 6px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+
+}
+
+.form_container input 
+{
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 5px;
+    border: 1px solid #e6edf39c;
+    color: #E6EDF3;
+    width: 100% !important;
+}
+
+.form_container input:focus {
+    outline: none !important;
+}
+
+.form_container input::placeholder {
+    color: #E6EDF3;
+}
+
+.AddBTN{
+    border-radius: 5px;
+    background-color: #0D1117;
+    border: none;
+    cursor: pointer;
+    color: #E6EDF3;
+}
+
+.AddBTN:hover{
+    color: #E6EDF3;
+}
+
+.Box
+{
+    height: 50vh;
+    border-radius: 5px;
+    background-color: #010409;
+    padding: 5px;
+    border: 1px solid #0D1117;
+    border-radius: 10px;
+    color: #111;
+    width: 100% !important;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.Box::-webkit-scrollbar {
+  width: 4px;  
+}
+.Box::-webkit-scrollbar-track {
+  background: #010409;     
+}
+.Box::-webkit-scrollbar-thumb {
+    background-color: #e6edf39c;    /* color of the scroll thumb */
+    border-radius: 10px;
+}
+
+
+.Box .Box-title {
+    /* background-color: #0D1117; */
+    border-radius: 5px;
+    color: #E6EDF3;
+}
+.Box .Box-title p{
+    color: #E6EDF3;
+    font-size: 12px;
+    padding: 5px;
+}
+.bullit{
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    background-color: #FFCA28 !important;
+    position: relative;
+    margin-left: 10px;
+    border-radius: 50%;
+}
+
+.c2{
+    background-color: #8957E5 !important; 
+}
+.c3{
+    background-color: #238636 !important; 
+}
+
+
+
+.dragItem{
+    background-color: #0D1117;
+    margin-bottom: 10px !important;
+    
+}
