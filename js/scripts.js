@@ -1,17 +1,12 @@
-
-
 let todo_task = document.querySelector('[name="todo-title"]');
 let AddBTN = document.querySelector(".AddBTN");
 let dataContainer = document.querySelector(".Data-items_todos");
 let Boxs = document.querySelectorAll(".Box");
-
-
 let drag= null; 
 
 AddBTN.addEventListener("click", function () {
-    
-    if (todo_task.value != "") {
 
+    if (todo_task.value != "") {
         let itemRecord = ''
         itemRecord += `<div class="dragItem border border-2" draggable="true" > 
                             <div class="d-flex mb-3" >
@@ -23,8 +18,6 @@ AddBTN.addEventListener("click", function () {
                             </div>
                         </div>`
     
-
-
         dataContainer.innerHTML += itemRecord
         todo_task.value = ""
 
@@ -32,12 +25,8 @@ AddBTN.addEventListener("click", function () {
             btn.addEventListener("click", function () {
                 this.parentElement.parentElement.parentElement.style.display = "none"
              });
-
         });
-
     }
- 
-
 });
 
 
@@ -46,19 +35,14 @@ AddBTN.addEventListener("click", function () {
 // drage and drop function
 function dragTasks() {
     document.querySelectorAll(".dragItem").forEach((task, i) => {
-
         task.addEventListener("dragstart", function () {
             // console.log("start");
             drag = task
         });
-
-
         task.addEventListener("dragend", function () {
             // console.log("end");
             drag = null
         });
-
-
         Boxs.forEach(box => {
             box.addEventListener("dragover", function (e) {
                 e.preventDefault();
@@ -67,39 +51,21 @@ function dragTasks() {
                 }
                 else if (this.dataset.columns == "completed") {
                     this.style.backgroundColor = '#238636';
-
-                    // setTimeout(() => {
-                    //     task.style.display = 'none';
-                    // }, 4000);
                 }
-
-
-
             });
-
             box.addEventListener("dragleave", function () {
                 this.style.backgroundColor = '#010409';
                 this.style.color = '#E6EDF3';
-
-
             });
-
             box.addEventListener("drop", function () {
                 this.append(drag);
                 this.style.backgroundColor = '#010409';
                 this.style.color = '#E6EDF3';
 
             });
-
         });
-
     });
-
-
-
-
 }
-
 dragTasks()
 
 
