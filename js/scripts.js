@@ -47,6 +47,10 @@ AddBTN.addEventListener("click", function () {
 function dragTasks() {
     document.querySelectorAll(".dragItem").forEach((task, i) => {
 
+        task.addEventListener("dragstart", function () {
+            // console.log("start");
+            drag = task
+        });
 
 
 
