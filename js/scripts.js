@@ -59,6 +59,49 @@ function dragTasks() {
         });
 
 
+        Boxs.forEach(box => {
+            box.addEventListener("dragover", function (e) {
+                e.preventDefault();
+                if (this.dataset.columns == "in progress") {
+                    this.style.backgroundColor = '#8957E5';
+                }
+                else if (this.dataset.columns == "completed") {
+                    this.style.backgroundColor = '#238636';
+
+                    // setTimeout(() => {
+                    //     task.style.display = 'none';
+                    // }, 4000);
+                }
+
+
+
+            });
+
+            box.addEventListener("dragleave", function () {
+                this.style.backgroundColor = '#010409';
+                this.style.color = '#E6EDF3';
+
+
+            });
+
+            box.addEventListener("drop", function () {
+                this.append(drag);
+                this.style.backgroundColor = '#010409';
+                this.style.color = '#E6EDF3';
+
+                // task.setAttribute('ondragstart', `hasbeenDraged(${i})`)
+
+                // task.addEventListener("click", function () {
+
+                //     task.style.display = 'none';
+
+                //  })
+
+
+
+            });
+
+        });
 
 
 
