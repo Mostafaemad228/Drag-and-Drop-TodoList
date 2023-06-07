@@ -24,6 +24,7 @@ Drag and drop to-do list to manage and filter tasks into what I need to do, what
 
 ## 🔭 Future Features <a name="future-features"></a>
 
+- [ ] **[Design update]**
 - [ ] **[Animation and Transition]**
 - [ ] **[Database]**
 
