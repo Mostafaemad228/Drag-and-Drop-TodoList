@@ -45,6 +45,6 @@ Drag and drop to-do list to manage and filter tasks into what I need to do, what
 If you like this project:thumbsup:
 
 
-  **thanks alot for you all**
+  **thank you very much all**
 
 
