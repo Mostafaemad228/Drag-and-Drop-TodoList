@@ -106,10 +106,14 @@ render();
 
 // drage and drop function
 function dragTasks() {
+    let type ="";
+    let todo_id
   document.querySelectorAll('.dragItem').forEach((task, i) => {
     task.addEventListener('dragstart', function () {
       // console.log("start");
       drag = task;
+      todo_id = +task.id
+      console.log(todo_id);
     });
     task.addEventListener('dragend', function () {
       // console.log("end");
@@ -129,20 +133,21 @@ function dragTasks() {
         this.style.color = '#E6EDF3';
       });
       box.addEventListener('drop', function () {
-        let todo = todos.find((todo) => todo.id === +task.id);
-
-        console.log(drag.parentElement.id);
-        todo.type = drag.parentElement.id;
-        console.log(todo);
-        console.log(todos);
-        
-        localStorage.setItem('todos', JSON.stringify(todos));
-
         this.append(drag);
+
+          type = drag.parentElement.id
+        // console.log(type);
         this.style.backgroundColor = '#010409';
         this.style.color = '#E6EDF3';
       });
     });
   });
+
+  console.log(todos);
+    let todo = todos.find((todo) => todo.id === todo_id);
+    todo.type = type;
+    localStorage.setItem('todos', JSON.stringify(todos));
+
+
 }
 dragTasks();
