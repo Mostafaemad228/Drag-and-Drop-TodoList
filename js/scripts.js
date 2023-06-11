@@ -46,6 +46,12 @@ const addTodo = (text) => {
   localStorage.setItem('todos', JSON.stringify(todos));
 };
 
+const deleteTodo = (id) => {
+  const newTodos = todos.filter((todo) => todo.id !== id);
+  localStorage.setItem('todos', JSON.stringify(newTodos));
+  render();
+};
+
 const renderTodoEl = (todo) => {
   return `<div class="dragItem border border-2" draggable="true" id='${todo.id}'> 
                             <div class="d-flex mb-3" >
@@ -53,7 +59,7 @@ const renderTodoEl = (todo) => {
                                     <span  > ${todo.text} </span>
                                 </div>
                                 
-                                <div  class="ml-auto p-2"> <button class="btn btn-danger DeleteTodo "> x </button> </div> 
+                                <div  class="ml-auto p-2"> <button id='${todo.id}' class="btn btn-danger DeleteTodo"> x </button> </div> 
                             </div>
                         </div>`;
 };
@@ -64,11 +70,6 @@ addBtn.addEventListener('click', function () {
     render();
     todo_task.value = '';
 
-    document.querySelectorAll('.DeleteTodo').forEach((btn) => {
-      btn.addEventListener('click', function () {
-        this.parentElement.parentElement.parentElement.style.display = 'none';
-      });
-    });
     dragTasks();
   }
 });
@@ -98,22 +99,22 @@ const render = () => {
         break;
     }
   });
+
+  document.querySelectorAll('.DeleteTodo').forEach((btn) => {
+    btn.addEventListener('click', function () {
+      deleteTodo(+btn.id);
+    });
+  });
 };
 
 render();
 
-
-
 // drage and drop function
 function dragTasks() {
-    let type ="";
-    let todo_id
   document.querySelectorAll('.dragItem').forEach((task, i) => {
     task.addEventListener('dragstart', function () {
       // console.log("start");
       drag = task;
-      todo_id = +task.id
-      console.log(todo_id);
     });
     task.addEventListener('dragend', function () {
       // console.log("end");
@@ -135,19 +136,25 @@ function dragTasks() {
       box.addEventListener('drop', function () {
         this.append(drag);
 
-          type = drag.parentElement.id
+        changeType(+drag.id, drag.parentElement.id);
+
         // console.log(type);
         this.style.backgroundColor = '#010409';
         this.style.color = '#E6EDF3';
       });
     });
   });
-
-  console.log(todos);
-    let todo = todos.find((todo) => todo.id === todo_id);
-    todo.type = type;
-    localStorage.setItem('todos', JSON.stringify(todos));
-
-
 }
 dragTasks();
+
+const changeType = (id, type) => {
+  //   console.log(id, type);
+
+  todos.map((todo) => {
+    if (todo.id === id) {
+      console.log(todo);
+      todo.type = type;
+    }
+  });
+  localStorage.setItem('todos', JSON.stringify(todos));
+};
